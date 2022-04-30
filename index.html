@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"/>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>Fixing a design</title>
+  </head>
+
+  <body>
+    <!-- <div
+      class="container-fluid"
+      style="
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap-reverse;
+        align-items: center;">
+      <div class="container links-card"> -->
+        <h1>Bad Web Design, A Solution...</h1>
+        <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'badDesign')">The Bad Design</button>
+          <button class="tablinks" onclick="openCity(event, 'solution')">The Solution</button>
+        </div>
+        
+        <!-- Tab content -->
+        <div id="badDesign" class="tabcontent">
+          <h3>The Bad Design</h3>
+          <p>On <a href="https://www.famlii.com/tools/what-day-of-the-week-were-you-born-calculator/" target=”_blank”>this</a> website there is a really inefficient date selection tool utilized.</p>
+          <img src="https://i.imgur.com/4q1mA9l.png" alt="Date Selector">
+          <p>This is inefficient because it takes multiple clicks and potentially a scroll to pick certain days of the month.</p>
+        </div>
+
+
+        
+        <div id="solution" class="tabcontent">
+          <h3>The Solution</h3>
+          <p>I would fix this issue by using a text input for the year only and radios for the day and month. This would look and function something like this.</p>
+
+          <div style="margin-bottom: 6px;">
+            <div style="display:inline-block; width:70px; text-align: right; vertical-align: top; margin:5px;">Year:</div>
+            <div style="display:inline-block; width:280px;">
+              <input type="text" name="year" style="width:70px; text-align:center; font:16px Arial;" value=""></div>
+          </div>
+          <div style="margin-bottom: 6px;">
+          <div style="display:inline-block; width:70px; text-align: right; vertical-align: top; margin:5px;">Month:</div>
+          <div style="display:inline-block; width:280px;">
+            <input id="month0" type="radio" name="month" value="Jan" onclick="go(0);" autocomplete="off" checked="">
+            <label id="month0lbl" for="month0">Jan</label>
+            <input id="month1" type="radio" name="month" value="Feb" onclick="go(1);" autocomplete="off">
+            <label id="month1lbl" for="month1">Feb</label>
+            <input id="month2" type="radio" name="month" value="Mar" onclick="go(2);" autocomplete="off">
+            <label id="month2lbl" for="month2">Mar</label>
+            <input id="month3" type="radio" name="month" value="Apr" onclick="go(3);" autocomplete="off">
+            <label id="month3lbl" for="month3">Apr</label>
+            <input id="month4" type="radio" name="month" value="May" onclick="go(4);" autocomplete="off">
+            <label id="month4lbl" for="month4">May</label>
+            <input id="month5" type="radio" name="month" value="Jun" onclick="go(5);" autocomplete="off">
+            <label id="month5lbl" for="month5">Jun</label>
+            <input id="month6" type="radio" name="month" value="Jul" onclick="go(6);" autocomplete="off">
+            <label id="month6lbl" for="month6">Jul</label>
+            <input id="month7" type="radio" name="month" value="Aug" onclick="go(7);" autocomplete="off">
+            <label id="month7lbl" for="month7">Aug</label>
+            <input id="month8" type="radio" name="month" value="Sep" onclick="go(8);" autocomplete="off">
+            <label id="month8lbl" for="month8">Sep</label>
+            <input id="month9" type="radio" name="month" value="Oct" onclick="go(9);" autocomplete="off">
+            <label id="month9lbl" for="month9">Oct</label>
+            <input id="month10" type="radio" name="month" value="Nov" onclick="go(10);" autocomplete="off">
+            <label id="month10lbl" for="month10">Nov</label>
+            <input id="month11" type="radio" name="month" value="Dec" onclick="go(11);" autocomplete="off">
+            <label id="month11lbl" for="month11">Dec</label> 
+          </div>
+        </div>
+        <div style="display:inline-block; width:70px; text-align: right; vertical-align: top; margin:5px;">Day:</div>
+          <div style="display:inline-block; width:280px;">
+          <input id="day0" type="radio" name="day" value="&nbsp;1&nbsp;" onclick="go(0);" autocomplete="off" checked="">
+          <label id="day0lbl" for="day0">&nbsp;1&nbsp;</label>
+          <input id="day1" type="radio" name="day" value="&nbsp;2&nbsp;" onclick="go(1);" autocomplete="off">
+          <label id="day1lbl" for="day1">&nbsp;2&nbsp;</label>
+          <input id="day2" type="radio" name="day" value="&nbsp;3&nbsp;" onclick="go(2);" autocomplete="off">
+          <label id="day2lbl" for="day2">&nbsp;3&nbsp;</label>
+          <input id="day3" type="radio" name="day" value="&nbsp;4&nbsp;" onclick="go(3);" autocomplete="off">
+          <label id="day3lbl" for="day3">&nbsp;4&nbsp;</label>
+          <input id="day4" type="radio" name="day" value="&nbsp;5&nbsp;" onclick="go(4);" autocomplete="off">
+          <label id="day4lbl" for="day4">&nbsp;5&nbsp;</label>
+          <input id="day5" type="radio" name="day" value="&nbsp;6&nbsp;" onclick="go(5);" autocomplete="off">
+          <label id="day5lbl" for="day5">&nbsp;6&nbsp;</label>
+          <input id="day6" type="radio" name="day" value="&nbsp;7&nbsp;" onclick="go(6);" autocomplete="off">
+          <label id="day6lbl" for="day6">&nbsp;7&nbsp;</label>
+          <input id="day7" type="radio" name="day" value="&nbsp;8&nbsp;" onclick="go(7);" autocomplete="off">
+          <label id="day7lbl" for="day7">&nbsp;8&nbsp;</label>
+          <input id="day8" type="radio" name="day" value="&nbsp;9&nbsp;" onclick="go(8);" autocomplete="off">
+          <label id="day8lbl" for="day8">&nbsp;9&nbsp;</label>
+          <input id="day9" type="radio" name="day" value="10" onclick="go(9);" autocomplete="off">
+          <label id="day9lbl" for="day9">10</label> 
+          <input id="day10" type="radio" name="day" value="11" onclick="go(10);" autocomplete="off">
+          <label id="day10lbl" for="day10">11</label> 
+          <input id="day11" type="radio" name="day" value="12" onclick="go(11);" autocomplete="off">
+          <label id="day11lbl" for="day11">12</label> 
+          <input id="day12" type="radio" name="day" value="13" onclick="go(12);" autocomplete="off">
+          <label id="day12lbl" for="day12">13</label> 
+          <input id="day13" type="radio" name="day" value="14" onclick="go(13);" autocomplete="off">
+          <label id="day13lbl" for="day13">14</label> 
+          <input id="day14" type="radio" name="day" value="15" onclick="go(14);" autocomplete="off">
+          <label id="day14lbl" for="day14">15</label> 
+          <input id="day15" type="radio" name="day" value="16" onclick="go(15);" autocomplete="off">
+          <label id="day15lbl" for="day15">16</label> 
+          <input id="day16" type="radio" name="day" value="17" onclick="go(16);" autocomplete="off">
+          <label id="day16lbl" for="day16">17</label> 
+          <input id="day17" type="radio" name="day" value="18" onclick="go(17);" autocomplete="off">
+          <label id="day17lbl" for="day17">18</label>
+          <input id="day18" type="radio" name="day" value="19" onclick="go(18);" autocomplete="off">
+          <label id="day18lbl" for="day18">19</label>
+          <input id="day19" type="radio" name="day" value="20" onclick="go(19);" autocomplete="off">
+          <label id="day19lbl" for="day19">20</label> 
+          <input id="day20" type="radio" name="day" value="21" onclick="go(20);" autocomplete="off">
+          <label id="day20lbl" for="day20">21</label> 
+          <input id="day21" type="radio" name="day" value="22" onclick="go(21);" autocomplete="off">
+          <label id="day21lbl" for="day21">22</label> 
+          <input id="day22" type="radio" name="day" value="23" onclick="go(22);" autocomplete="off">
+          <label id="day22lbl" for="day22">23</label> 
+          <input id="day23" type="radio" name="day" value="24" onclick="go(23);" autocomplete="off">
+          <label id="day23lbl" for="day23">24</label> 
+          <input id="day24" type="radio" name="day" value="25" onclick="go(24);" autocomplete="off">
+          <label id="day24lbl" for="day24">25</label> 
+          <input id="day25" type="radio" name="day" value="26" onclick="go(25);" autocomplete="off">
+          <label id="day25lbl" for="day25">26</label> 
+          <input id="day26" type="radio" name="day" value="27" onclick="go(26);" autocomplete="off">
+          <label id="day26lbl" for="day26">27</label> 
+          <input id="day27" type="radio" name="day" value="28" onclick="go(27);" autocomplete="off">
+          <label id="day27lbl" for="day27">28</label> 
+          <input id="day28" type="radio" name="day" value="29" onclick="go(28);" autocomplete="off">
+          <label id="day28lbl" for="day28" style="visibility: visible;">29</label> 
+          <input id="day29" type="radio" name="day" value="30" onclick="go(29);" autocomplete="off">
+          <label id="day29lbl" for="day29" style="visibility: visible;">30</label>
+          <input id="day30" type="radio" name="day" value="31" onclick="go(30);" autocomplete="off">
+          <label id="day30lbl" for="day30" style="visibility: visible;">31</label> 
+        </div>
+
+        <button type="button" onclick="displayRadioValue()">Submit</button>
+        <div id="result"></div>
+        <div id="resultTwo"></div>
+        <div id="resultThree"></div>
+      
+
+  <footer class="footer mt-auto py-3 bg-light";>
+    <div class="container">
+      <!-- <span class="text-muted">Return to the </span> -->
+      <a href="https://github.com/CDman814/redesigned-potato/" target=”_blank” class="card-link">View the Repo</a>
+      <span class="text-muted">|</span>
+      <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fcdman814.github.io%2Fredesigned-potato%2F" target=”_blank” class="card-link">Validity Check</a>
+      <span class="text-muted">|</span>
+      <a href="https://www.jellotime.com/" target=”_blank” class="card-link">Jello</a>
+    </div>
+  </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+      integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
+      crossorigin="anonymous"></script>  
+    <script src="./scripts/scripts.js"></script>
+  </body>
+</html>
